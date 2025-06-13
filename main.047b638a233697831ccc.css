@@ -1,0 +1,150 @@
+.cdk-overlay-container,.cdk-global-overlay-wrapper{pointer-events:none;top:0;left:0;height:100%;width:100%}.cdk-overlay-container{position:fixed;z-index:1000}.cdk-overlay-container:empty{display:none}.cdk-global-overlay-wrapper{display:flex;position:absolute;z-index:1000}.cdk-overlay-pane{position:absolute;pointer-events:auto;box-sizing:border-box;display:flex;max-width:100%;max-height:100%;z-index:1000}.cdk-overlay-backdrop{position:absolute;top:0;bottom:0;left:0;right:0;pointer-events:auto;-webkit-tap-highlight-color:rgba(0,0,0,0);opacity:0;touch-action:manipulation;z-index:1000;transition:opacity 400ms cubic-bezier(0.25, 0.8, 0.25, 1)}@media(prefers-reduced-motion){.cdk-overlay-backdrop{transition-duration:1ms}}.cdk-overlay-backdrop-showing{opacity:1}@media(forced-colors: active){.cdk-overlay-backdrop-showing{opacity:.6}}.cdk-overlay-dark-backdrop{background:rgba(0,0,0,.32)}.cdk-overlay-transparent-backdrop{transition:visibility 1ms linear,opacity 1ms linear;visibility:hidden;opacity:1}.cdk-overlay-transparent-backdrop.cdk-overlay-backdrop-showing,.cdk-high-contrast-active .cdk-overlay-transparent-backdrop{opacity:0;visibility:visible}.cdk-overlay-backdrop-noop-animation{transition:none}.cdk-overlay-connected-position-bounding-box{position:absolute;display:flex;flex-direction:column;min-width:1px;min-height:1px;z-index:1000}.cdk-global-scrollblock{position:fixed;width:100%;overflow-y:scroll}
+
+@charset "UTF-8";
+button[role=menuitem].ngx-context-menu-item {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+  /* Remove excess padding and border in Firefox 4+ */
+}
+button[role=menuitem].ngx-context-menu-item::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+:root {
+  --ngx-contextmenu-focusable-border-bottom: 1px dotted #70757e;
+  --ngx-contextmenu-font-family: sans-serif;
+  --ngx-contextmenu-background-color: white;
+  --ngx-contextmenu-border-radius: 4px;
+  --ngx-contextmenu-border: 1px solid rgba(0, 0, 0, 0.18);
+  --ngx-contextmenu-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18);
+  --ngx-contextmenu-font-size: 14px;
+  --ngx-contextmenu-margin: 2px 0 0;
+  --ngx-contextmenu-min-width: 160px;
+  --ngx-contextmenu-outline: 1px solid #70757e;
+  --ngx-contextmenu-padding: 5px 0;
+  --ngx-contextmenu-text-color: #70757e;
+  --ngx-contextmenu-text-disabled-color: #b5bec8;
+  --ngx-contextmenu-max-height: 100vh;
+  --ngx-contextmenu-item-arrow-left: "◀";
+  --ngx-contextmenu-item-arrow-right: "▶";
+  --ngx-contextmenu-item-background-hover-color: #f8f8f8;
+  --ngx-contextmenu-item-separator-color: #b5bec8;
+  --ngx-contextmenu-item-separator-padding: 10px;
+  --ngx-contextmenu-item-separator-width: 96%;
+  --ngx-contextmenu-item-padding: 6px 20px;
+  --ngx-contextmenu-item-text-hover-color: #5a6473;
+}
+
+.ngx-contextmenu {
+  background-clip: padding-box;
+  background-color: var(--ngx-contextmenu-background-color);
+  border-radius: var(--ngx-contextmenu-border-radius);
+  border: var(--ngx-contextmenu-border);
+  box-shadow: var(--ngx-contextmenu-box-shadow);
+  color: var(--ngx-contextmenu-text-color);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--ngx-contextmenu-font-family);
+  font-size: var(--ngx-contextmenu-font-size);
+  margin: var(--ngx-contextmenu-margin);
+  max-height: var(--ngx-contextmenu-max-height);
+  min-width: var(--ngx-contextmenu-min-width);
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: var(--ngx-contextmenu-padding);
+  text-align: start;
+}
+.ngx-contextmenu:focus-visible {
+  outline: var(--ngx-contextmenu-outline);
+}
+.ngx-contextmenu:empty {
+  display: none;
+}
+.ngx-contextmenu .ngx-context-menu-item {
+  display: flex;
+}
+.ngx-contextmenu .ngx-context-menu-item.ngx-contextmenu--parent-menu:after {
+  content: var(--ngx-contextmenu-item-arrow-right);
+}
+.ngx-contextmenu .ngx-context-menu-item[role=separator] {
+  border-width: 0 0 1px 0;
+  border-bottom: 1px solid var(--ngx-contextmenu-item-separator-color);
+  margin: var(--ngx-contextmenu-item-separator-padding) 2%;
+  width: var(--ngx-contextmenu-item-separator-width);
+}
+.ngx-contextmenu .ngx-context-menu-item[role=menuitem] {
+  padding: var(--ngx-contextmenu-item-padding);
+}
+.ngx-contextmenu .ngx-context-menu-item[role=menuitem] {
+  outline: none;
+  color: var(--ngx-contextmenu-text-color);
+  flex-direction: row;
+  justify-content: space-between;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.ngx-contextmenu .ngx-context-menu-item:not(.disabled):not(:disabled):not(.ngx-contextmenu-item--passive):hover, .ngx-contextmenu .ngx-context-menu-item:not(.disabled):not(:disabled):not(.ngx-contextmenu-item--passive):focus-visible {
+  text-decoration: none;
+  background-color: var(--ngx-contextmenu-item-background-hover-color);
+  color: var(--ngx-contextmenu-item-text-hover-color);
+}
+.ngx-contextmenu .ngx-context-menu-item.disabled, .ngx-contextmenu .ngx-context-menu-item:disabled {
+  cursor: default;
+}
+.ngx-contextmenu .ngx-context-menu-item.disabled, .ngx-contextmenu .ngx-context-menu-item.disabled:hover, .ngx-contextmenu .ngx-context-menu-item.disabled.active, .ngx-contextmenu .ngx-context-menu-item:disabled, .ngx-contextmenu .ngx-context-menu-item:disabled:hover, .ngx-contextmenu .ngx-context-menu-item:disabled.active {
+  color: var(--ngx-contextmenu-text-disabled-color);
+}
+.ngx-contextmenu[dir=rtl] .ngx-contextmenu--parent-menu:after {
+  content: var(--ngx-contextmenu-item-arrow-left);
+}
+button[role=menuitem].ngx-context-menu-item {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+  /* Remove excess padding and border in Firefox 4+ */
+}
+button[role=menuitem].ngx-context-menu-item::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+body {
+  font-family: sans-serif;
+}
+
+img[src*=logo] {
+  vertical-align: middle;
+}
+
+context-menu-content.custom-theme-blue {
+  --ngx-contextmenu-text-color: white;
+  --ngx-contextmenu-text-disabled-color: rgba(white, 80%);
+  --ngx-contextmenu-background-color: #01579b;
+}
