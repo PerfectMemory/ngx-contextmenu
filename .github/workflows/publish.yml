@@ -3,6 +3,9 @@ on:
   push:
     tags:
       - v*
+permissions:
+  id-token: write  # Required for OIDC @see https://docs.npmjs.com/trusted-publishers
+  contents: read
 
 jobs:
   build:
@@ -12,10 +15,8 @@ jobs:
       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v4
         with:
-          node-version: '>=18.13.0'
+          node-version: '>=20.0.0'
           registry-url: 'https://registry.npmjs.org/'
       - run: yarn
       - run: yarn run build:lib
       - run: yarn publish ./dist/libs/ngx-contextmenu
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
