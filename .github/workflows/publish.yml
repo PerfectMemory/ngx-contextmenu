@@ -1,4 +1,4 @@
-name: Publish to NPM
+name: publish
 on:
   push:
     tags:
@@ -15,11 +15,11 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
-          registry-url: https://registry.npmjs.org/
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org'
 
       - run: yarn install --frozen-lockfile
       - run: yarn run build:lib
 
       - name: Publish
-        run: npm publish ./dist/libs/ngx-contextmenu --access public
+        run: npm publish ./dist/libs/ngx-contextmenu
