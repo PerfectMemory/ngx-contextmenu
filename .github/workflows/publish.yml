@@ -8,15 +8,18 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      # Setup .npmrc file to publish to npm
+
       - uses: actions/setup-node@v4
         with:
-          node-version: '>=20.0.0'
-          registry-url: 'https://registry.npmjs.org/'
-      - run: yarn
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+
+      - run: yarn install --frozen-lockfile
       - run: yarn run build:lib
-      - run: yarn publish ./dist/libs/ngx-contextmenu
+
+      - name: Publish
+        run: npm publish ./dist/libs/ngx-contextmenu --access public
