@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Fix
+
+- Fix erroneous @angular/cdk dependency version
+
 ## [21.0.0] - 2026-01-02
 
 ### BREAKING CHANGES
