@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [22.0.0] - 2026-08-07
+
 ### BREAKING CHANGES
 
 - **Dependency**: Require Angular 22
