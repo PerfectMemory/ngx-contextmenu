@@ -17,7 +17,11 @@
     "baseUrl": ".",
     "paths": {
       "@perfectmemory/ngx-contextmenu": ["libs/ngx-contextmenu/src/index.ts"]
-    }
+    },
+    "strict": false,
+    "noUncheckedSideEffectImports": false,
+    "types": ["*"],
+    "ignoreDeprecations": "6.0"
   },
   "exclude": ["node_modules", "tmp"]
 }

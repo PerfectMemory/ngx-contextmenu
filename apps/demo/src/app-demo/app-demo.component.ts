@@ -4,6 +4,7 @@ import {
   Input,
   Output,
   ViewChild,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import {
   ContextMenuDirective,
@@ -34,6 +35,7 @@ import {
     `,
   ],
   templateUrl: './app-demo.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class AppDemoComponent {

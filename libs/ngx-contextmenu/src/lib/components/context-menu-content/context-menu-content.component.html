@@ -18,7 +18,7 @@
   (mouseenter)="
     hideSubMenus();
     openSubMenu(
-      buttonContextMenuContentItem.contextMenuContentItem?.subMenu,
+      $safeNavigationMigration(buttonContextMenuContentItem.contextMenuContentItem?.subMenu),
       $event
     )
   "

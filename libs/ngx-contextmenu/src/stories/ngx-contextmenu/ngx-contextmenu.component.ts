@@ -4,6 +4,7 @@ import {
   Input,
   Output,
   ViewChild,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { ContextMenuOpenEvent } from '../../lib/components/context-menu/context-menu.component.interface';
 import { ContextMenuDirective } from '../../lib/directives/context-menu/context-menu.directive';
@@ -13,6 +14,7 @@ import { ContextMenuService } from '../../lib/services/context-menu/context-menu
   selector: 'storybook-context-menu',
   templateUrl: 'ngx-contextmenu.component.html',
   styleUrls: ['./ngx-contextmenu.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export default class StorybookContextMenuComponent {

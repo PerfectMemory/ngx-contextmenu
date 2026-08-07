@@ -1,4 +1,4 @@
-import { Component, DebugElement, Input, TemplateRef } from '@angular/core';
+import { Component, DebugElement, Input, TemplateRef, ChangeDetectionStrategy } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { ContextMenuOverlaysService } from '../../services/context-menu-overlays/context-menu-overlays.service';
@@ -7,6 +7,7 @@ import { ContextMenuContentItemDirective } from './context-menu-content-item.dir
 
 @Component({
   template: '<div [contextMenuContentItem]="contextMenuItem"></div>',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 class TestHostComponent {

@@ -24,9 +24,10 @@
     "url": "git+ssh://git@github.com:PerfectMemory/ngx-contextmenu.git"
   },
   "peerDependencies": {
-    "@angular/cdk": "^21.0.5",
-    "@angular/common": "^21.0.6",
-    "@angular/core": "^21.0.6"
+    "@angular/cdk": "^22",
+    "@angular/common": "^22",
+    "@angular/core": "^22",
+    "rxjs": "^7.8.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"

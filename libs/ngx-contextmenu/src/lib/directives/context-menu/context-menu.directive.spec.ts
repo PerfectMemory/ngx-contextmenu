@@ -1,5 +1,5 @@
 import { OverlayModule } from '@angular/cdk/overlay';
-import { Component, DebugElement } from '@angular/core';
+import { Component, DebugElement, ChangeDetectionStrategy } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { ContextMenuContentComponent } from '../../components/context-menu-content/context-menu-content.component';
@@ -9,6 +9,7 @@ import { ContextMenuDirective } from './context-menu.directive';
 
 @Component({
   template: '<div contextMenu></div>',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 class TestHostComponent {}

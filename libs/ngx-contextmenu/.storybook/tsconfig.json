@@ -1,7 +1,7 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "emitDecoratorMetadata": true
+    "ignoreDeprecations": "6.0"
   },
   "exclude": ["../**/*.spec.ts"],
   "include": [
