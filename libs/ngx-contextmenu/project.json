@@ -9,6 +9,7 @@
     "build": {
       "executor": "@nx/angular:package",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "defaultConfiguration": "production",
       "options": {
         "project": "libs/ngx-contextmenu/ng-package.json",
         "tsConfig": "libs/ngx-contextmenu/tsconfig.lib.json"
@@ -18,15 +19,21 @@
           "tsConfig": "libs/ngx-contextmenu/tsconfig.lib.prod.json"
         },
         "development": {}
-      },
-      "defaultConfiguration": "production"
+      }
     },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}",
+        "{workspaceRoot}/coverage/@perfectmemory/ngx-contextmenu"
+      ],
       "options": {
-        "jestConfig": "libs/ngx-contextmenu/jest.config.ts",
-        "tsConfig": "libs/ngx-contextmenu/tsconfig.spec.json"
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "coverage": true
+        }
       }
     },
     "lint": {

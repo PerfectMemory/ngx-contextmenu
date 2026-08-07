@@ -16,6 +16,7 @@ import {
   Output,
   QueryList,
   ViewEncapsulation,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ContextMenuItemDirective } from '../../directives/context-menu-item/context-menu-item.directive';
@@ -35,6 +36,7 @@ import {
   encapsulation: ViewEncapsulation.None,
   selector: 'context-menu',
   template: '',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class ContextMenuComponent<T> implements OnInit, OnDestroy {
